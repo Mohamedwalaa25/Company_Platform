@@ -30,6 +30,7 @@ use Illuminate\Support\Facades\Route;
 //
 //require __DIR__.'/auth.php';
 
+//User Routes
 Route::prefix('/')->name('front.')->group(function (){
     Route::get('',function (){
         return view('front.index');
@@ -58,5 +59,14 @@ Route::prefix('/')->name('front.')->group(function (){
     Route::get('/testimonial',function (){
         return view('front.testimonial');
     })->name('testimonial');
+
+});
+//////////////////////
+//Admin Routes
+Route::prefix('/admin')->name('admin.')->group(function (){
+    Route::get('',function (){
+        return view('admin.index');
+    })->name('index');
+
 
 });
