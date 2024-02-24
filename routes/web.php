@@ -64,9 +64,23 @@ Route::prefix('/')->name('front.')->group(function (){
 //////////////////////
 //Admin Routes
 Route::prefix('/admin')->name('admin.')->group(function (){
-    Route::get('',function (){
-        return view('admin.index');
-    })->name('index');
+    Route::middleware('admin')->group(function (){
+        Route::get('',function (){
+            return view('admin.index');
+        })->name('index');
+
+        Route::get('/settings',function (){
+            return view('admin.settings.index');
+        })->name('settings');
+    });
+
+    Route::get('/login',function (){
+        return view('admin.auth.login');
+    })->name('login')->middleware('guest:admin');
+
+    Route::get('/logout',function (){
+        return view('admin.auth.login');
+    })->name('login')->middleware('guest:admin');
 
 
 });
