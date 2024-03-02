@@ -82,6 +82,12 @@
                 <div data-i18n="Analytics">Settings</div>
             </a>
         </li>
+        <li class="menu-item @yield('skill-active')">
+            <a href="{{route('admin.skill')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cog"></i>
+                <div data-i18n="Analytics">Skill</div>
+            </a>
+        </li>
 
         <!-- Layouts -->
     </ul>

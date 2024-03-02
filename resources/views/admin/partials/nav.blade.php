@@ -70,7 +70,7 @@
                         </a>
                     </li>
                     <li>
-                        <a class="dropdown-item" href="#">
+                        <a class="dropdown-item" href="{{route('admin.settings')}}">
                             <i class="bx bx-cog me-2"></i>
                             <span class="align-middle">Settings</span>
                         </a>

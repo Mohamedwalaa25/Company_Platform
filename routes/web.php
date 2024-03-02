@@ -31,56 +31,60 @@ use Illuminate\Support\Facades\Route;
 //require __DIR__.'/auth.php';
 
 //User Routes
-Route::prefix('/')->name('front.')->group(function (){
-    Route::get('',function (){
+Route::prefix('/')->name('front.')->group(function () {
+    Route::get('', function () {
         return view('front.index');
     })->name('index');
 
-    Route::get('/about',function (){
+    Route::get('/about', function () {
         return view('front.about');
     })->name('about');
 
-    Route::get('/contact',function (){
+    Route::get('/contact', function () {
         return view('front.contact');
     })->name('contact');
 
-    Route::get('/project',function (){
+    Route::get('/project', function () {
         return view('front.project');
     })->name('project');
 
-    Route::get('/service',function (){
+    Route::get('/service', function () {
         return view('front.service');
     })->name('service');
 
-    Route::get('/team',function (){
+    Route::get('/team', function () {
         return view('front.team');
     })->name('team');
 
-    Route::get('/testimonial',function (){
+    Route::get('/testimonial', function () {
         return view('front.testimonial');
     })->name('testimonial');
 
 });
 //////////////////////
 //Admin Routes
-Route::prefix('/admin')->name('admin.')->group(function (){
-    Route::middleware('admin')->group(function (){
-        Route::get('',function (){
+Route::prefix('/admin')->name('admin.')->group(function () {
+    Route::middleware('admin')->group(function () {
+        Route::get('', function () {
             return view('admin.index');
         })->name('index');
 
-        Route::get('/settings',function (){
+        Route::get('/settings', function () {
             return view('admin.settings.index');
         })->name('settings');
     });
+    Route::get('/skill', function () {
+        return view('admin.skills.index');
+    })->name('skill');
 
-    Route::get('/login',function (){
-        return view('admin.auth.login');
-    })->name('login')->middleware('guest:admin');
 
-    Route::get('/logout',function (){
-        return view('admin.auth.login');
-    })->name('login')->middleware('guest:admin');
+Route::get('/login', function () {
+    return view('admin.auth.login');
+})->name('login')->middleware('guest:admin');
+
+Route::get('/logout', function () {
+    return view('admin.auth.login');
+})->name('login')->middleware('guest:admin');
 
 
 });
