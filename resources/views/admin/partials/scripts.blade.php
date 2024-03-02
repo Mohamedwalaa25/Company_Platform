@@ -17,3 +17,29 @@
 
 <!-- Place this tag in your head or just before your close body tag. -->
 <script async defer src="https://buttons.github.io/buttons.js"></script>
+
+<script>
+    window.addEventListener('createData', event => {
+      $('#basicModal').modal('toggle');
+    })
+</script>
+
+
+<script>
+    window.addEventListener('editData', event => {
+        $('#updateModal').modal('toggle');
+    })
+</script>
+
+<script>
+    window.addEventListener('deleteData', event => {
+        $('#deleteModal').modal('toggle');
+    })
+</script>
+<script>
+    window.addEventListener('skillShow', event => {
+        $('#showModal').modal('toggle');
+    })
+</script>
+
+

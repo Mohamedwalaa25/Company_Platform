@@ -1,8 +1,8 @@
-<div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true" wire:igrone.self>
+<div class="modal fade" id="basicModal" tabindex="-1" aria-hidden="true" wire:ignore.self>
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+                <h5 class="modal-title" id="exampleModalLabel1">Create New Skill</h5>
                 <button
                     type="button"
                     class="btn-close"
@@ -15,15 +15,15 @@
                 <div class="row">
                     <div class="col mb-0">
                         <label class="form-label">Name</label>
-                        <input type="text"  class="form-control" placeholder="Name" wire:model="skill.name" />
-                        @error('skill.name')
+                        <input type="text"  class="form-control" placeholder="Name" wire:model="name" />
+                        @error('name')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>
                     <div class="col mb-0">
                         <label  class="form-label">Progress</label>
-                        <input type="number"  class="form-control" placeholder="Progress" min="1" max="100" wire:model="skill.progress"/>
-                        @error('skill.progress')
+                        <input type="number"  class="form-control" placeholder="Progress" min="1" max="100" wire:model="progress"/>
+                        @error('progress')
                         <div class="text-danger">{{ $message }}</div>
                         @enderror
                     </div>

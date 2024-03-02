@@ -7,23 +7,32 @@ use Livewire\Component;
 
 class SkillsCreate extends Component
 {
-    public $skill;
+    public $name,$progress;
 
     public function mount()
     {
-        $this->skill = new Skill();
+
     }
     public function rules(){
         return [
-            'skill.name'=>'required',
-            'skill.progress'=>'required|numeric|min:1|max:100',
+            'name'=>'required',
+            'progress'=>'required|numeric|min:1|max:100',
         ];
     }
     public function submit(){
-        $this->validate();
+        $data=$this->validate();
+        Skill::create($data);
+        $this->reset('name','progress');
+
+
+        $this->dispatch('createData');
+        $this->dispatch('refreshData')->to(SkillsData::class);
+
+
     }
     public function render()
     {
         return view('admin.skills.skills-create');
     }
 }
+
