@@ -77,6 +77,10 @@ Route::prefix('/admin')->name('admin.')->group(function () {
         return view('admin.skills.index');
     })->name('skill');
 
+    Route::get('/categories', function () {
+        return view('admin.categories.index');
+    })->name('categories');
+
     Route::get('/subscribers', function () {
         return view('admin.subscribers.index');
     })->name('subscribers');
