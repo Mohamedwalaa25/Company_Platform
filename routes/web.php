@@ -86,6 +86,10 @@ Route::prefix('/admin')->name('admin.')->group(function () {
         return view('admin.counter.index');
     })->name('counters');
 
+    Route::get('/services', function () {
+        return view('admin.services.index');
+    })->name('services');
+
 
 
 
