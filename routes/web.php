@@ -90,6 +90,11 @@ Route::prefix('/admin')->name('admin.')->group(function () {
         return view('admin.services.index');
     })->name('services');
 
+    Route::get('/messages', function () {
+        return view('admin.messages.index');
+    })->name('messages');
+
+
 
 
 
