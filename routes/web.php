@@ -82,6 +82,12 @@ Route::prefix('/admin')->name('admin.')->group(function () {
     })->name('subscribers');
 
 
+    Route::get('/counters', function () {
+        return view('admin.counter.index');
+    })->name('counters');
+
+
+
 
     Route::get('/login', function () {
     return view('admin.auth.login');

@@ -96,6 +96,13 @@
             </a>
         </li>
 
+        <li class="menu-item @yield('counter-active')">
+            <a href="{{route('admin.counters')}}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cog"></i>
+                <div data-i18n="Analytics">Counters</div>
+            </a>
+        </li>
+
         <!-- Layouts -->
     </ul>
 </aside>
