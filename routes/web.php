@@ -98,6 +98,11 @@ Route::prefix('/admin')->name('admin.')->group(function () {
         return view('admin.messages.index');
     })->name('messages');
 
+    Route::get('/projects', function () {
+        return view('admin.projects.index');
+    })->name('projects');
+
+
 
 
 
